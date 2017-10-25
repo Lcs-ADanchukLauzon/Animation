@@ -20,8 +20,8 @@ class Sketch : NSObject {
         // Set starting position
         x = random(from: 200, toButNotIncluding: 401)
         y = 250
-        dx = 3
-        dy = 3
+        dx = 10
+        dy = 10
     }
     
     // Runs in a loop, forever, to create the animated effect
@@ -40,16 +40,16 @@ class Sketch : NSObject {
         y += dy
         
         if x > 475 {
-         dx = -3
+         dx = -10
         }
         if x < 25{
-            dx = 3
+            dx = 10
         }
         if y > 475{
-            dy = -3
+            dy = -10
         }
         if y < 25{
-            dy = 3
+            dy = 10
         }
         
         
