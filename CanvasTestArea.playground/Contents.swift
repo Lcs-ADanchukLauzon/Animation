@@ -36,19 +36,22 @@ canvas.drawRectangle(bottomLeftX: -200, bottomLeftY: -300, width: 100, height: 2
 canvas.fillColor = Color.yellow
 for i1 in stride(from: -260, through: -160, by: 50){
   canvas.drawRectangle(bottomLeftX: -180, bottomLeftY: i1, width: 20, height: 30)
+  canvas.drawRectangle(bottomLeftX: -140, bottomLeftY: i1, width: 20, height: 30)
 }
-for i2 in stride(from: -260, through: -160, by: 50){
-    canvas.drawRectangle(bottomLeftX: -140, bottomLeftY: i2, width: 20, height: 30)
-}
+
+// beam of light
+canvas.fillColor = Color.init(hue: 64, saturation: 72, brightness: 60, alpha: 100)
+canvas.drawShapesWithBorders = false
+var beamlights : [NSPoint] = []
+beamlights.append(NSPoint(x: -160, y: -100))
+beamlights.append(NSPoint(x: 70, y: 140))
+beamlights.append(NSPoint(x: 160, y: 30))
+beamlights.append(NSPoint(x: -160, y: -100))
+canvas.drawCustomShape(with: beamlights)
 
 // Sky circle
-canvas.fillColor = Color.init(hue: 64, saturation: 72, brightness: 60, alpha: 100)
+canvas.drawShapesWithBorders = true
 canvas.drawEllipse(centreX: 160, centreY: 120, width: 180, height: 180)
-
-
-//canvas.drawCustomShape(with: <#T##[NSPoint]#>)
-
-
 
 
 
