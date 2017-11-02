@@ -28,40 +28,36 @@ canvas.drawShapesWithBorders = false
 // Move the origin to the middle of the canvasand
 canvas.translate(byX: 400, byY: 300)
 
-// Draw the axes so we can see where we are
-canvas.drawAxes()
-
 // Draw a bat relative to the origin
 canvas.fillColor = Color.black
 
-// First make an ellipse to form the body
-canvas.drawEllipse(centreX: 0, centreY: 0, width: 200, height: 100)
+
+canvas.drawEllipse(centreX: 0, centreY: 0, width: 100, height: 50)
 
 // Now "cut out" the wings and head by overlapping circles
 canvas.fillColor = Color.white
 
 // Underside of wings
-canvas.drawEllipse(centreX: -70, centreY: -10, width: 50, height: 50) // left
-canvas.drawEllipse(centreX: -35, centreY: -10, width: 50, height: 50) // left middle
-canvas.drawEllipse(centreX: 35, centreY: -10, width: 50, height: 50) // right middle
-canvas.drawEllipse(centreX: 70, centreY: -10, width: 50, height: 50) // right
+canvas.drawEllipse(centreX: -35, centreY: -10, width: 25, height: 25) // left
+canvas.drawEllipse(centreX: -15, centreY: -10, width: 25, height: 25) // left middle
+canvas.drawEllipse(centreX: 15, centreY: -10, width: 25, height: 25) // right middle
+canvas.drawEllipse(centreX: 35, centreY: -10, width: 25, height: 25) // right
 
 // Further down
-canvas.drawEllipse(centreX: 0, centreY: -50, width: 50, height: 100) // middle
+canvas.drawEllipse(centreX: 0, centreY: -53, width: 50, height: 100) // middle
 
 // Get rid of rest further down
-canvas.drawRectangle(centreX: 0, centreY: -35, width: 200, height: 30)
-
+canvas.drawRectangle(centreX: 0, centreY: -25, width: 200, height: 30)
 // Now add the head
 canvas.fillColor = Color.black
 var headVertices : [NSPoint] = []
-headVertices.append(NSPoint(x: -40, y: 40))
-headVertices.append(NSPoint(x: 40, y: 40))
-headVertices.append(NSPoint(x: 30, y: 80))
-headVertices.append(NSPoint(x: 20, y: 60))
-headVertices.append(NSPoint(x: -20, y: 60))
-headVertices.append(NSPoint(x: -30, y: 80))
-headVertices.append(NSPoint(x: -40, y: 40)) // end where we started
+headVertices.append(NSPoint(x: -20, y: 20))
+headVertices.append(NSPoint(x: 20, y: 20))
+headVertices.append(NSPoint(x: 15, y: 40))
+headVertices.append(NSPoint(x: 10, y: 30))
+headVertices.append(NSPoint(x: -10, y: 30))
+headVertices.append(NSPoint(x: -15, y: 40))
+headVertices.append(NSPoint(x: -20, y: 20)) // end where we started
 canvas.drawCustomShape(with: headVertices)
 
 /*:
