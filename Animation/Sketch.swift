@@ -65,13 +65,13 @@ class Sketch : NSObject {
 //        canvas.drawEllipse(centreX: Int(x), centreY: Int(y), width: 4, height: 4)
 //        canvas.drawEllipse(centreX: Int(z), centreY: 250, width: 200, height: 200)
 //        canvas.drawEllipse(centreX: Int(z), centreY: 250, width: 4, height: 4)
-        canvas.drawShapesWithFill = true
-        
-        if sqrt(pow(x - z, 2) + pow(y - 250, 2)) < 150{
-            canvas.lineColor = Color.red
-            canvas.drawLine(fromX: Int(x), fromY: Int(y), toX: Int(z), toY: 250)
+        canvas.drawShapesWithFill = false
+        canvas.defaultBorderWidth = 3
+        if sqrt(pow(x - z, 2) + pow(y - 250, 2)) < 350{
+            canvas.borderColor = Color.init(hue: random(from: 0, toButNotIncluding: 361), saturation: 100, brightness: 100, alpha: 100)
+            canvas.drawEllipse(centreX: 250, centreY: 250, width: Int(sqrt(pow(x - z, 2) + pow(y - 250, 2))) + 3, height: Int(sqrt(pow(x - z, 2) + pow(y - 250, 2))) + 3)
         }
-        
+    
         if canvas.frameCount == 2000 {
             canvas.copyToClipboard()
         }
