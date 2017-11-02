@@ -18,7 +18,9 @@ class Sketch : NSObject {
         canvas = Canvas(width: 600, height: 600)
         canvas.translate(byX: 300, byY: 300)
         // Set starting position
-        Xc = 160
+       Xc = 160
+      
+        // initial speed (can be changed)
         Xcd = 1
        
         
