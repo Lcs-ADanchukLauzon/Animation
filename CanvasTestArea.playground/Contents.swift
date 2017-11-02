@@ -53,8 +53,42 @@ canvas.drawCustomShape(with: beamlights)
 canvas.drawShapesWithBorders = true
 canvas.drawEllipse(centreX: 160, centreY: 120, width: 180, height: 180)
 
+// -------------------------------------------------
+// No borders
+canvas.drawShapesWithBorders = false
 
+// Draw a bat relative to the origin
+canvas.fillColor = Color.black
 
+canvas.translate(byX: 160, byY: 110)
+canvas.drawEllipse(centreX: 0, centreY: 0, width: 100, height: 50)
+
+// Now "cut out" the wings and head by overlapping circles
+canvas.fillColor = Color.init(hue: 64, saturation: 72, brightness: 60, alpha: 100)
+
+// Underside of wings
+canvas.drawEllipse(centreX: -35, centreY: -10, width: 25, height: 25) // left
+canvas.drawEllipse(centreX: -15, centreY: -10, width: 25, height: 25) // left middle
+canvas.drawEllipse(centreX: 15, centreY: -10, width: 25, height: 25) // right middle
+canvas.drawEllipse(centreX: 35, centreY: -10, width: 25, height: 25) // right
+
+// Further down
+canvas.drawEllipse(centreX: 0, centreY: -10, width: 50, height: 10) // middle
+
+// Get rid of rest further down
+canvas.drawRectangle(centreX: 0, centreY: -20, width: 100, height: 10)
+// Now add the head
+canvas.fillColor = Color.black
+var headVertices : [NSPoint] = []
+headVertices.append(NSPoint(x: -20, y: 20))
+headVertices.append(NSPoint(x: 20, y: 20))
+headVertices.append(NSPoint(x: 15, y: 40))
+headVertices.append(NSPoint(x: 10, y: 30))
+headVertices.append(NSPoint(x: -10, y: 30))
+headVertices.append(NSPoint(x: -15, y: 40))
+headVertices.append(NSPoint(x: -20, y: 20)) // end where we started
+canvas.drawCustomShape(with: headVertices)
+canvas.translate(byX: -160, byY: -110)
 
 
 /*:
