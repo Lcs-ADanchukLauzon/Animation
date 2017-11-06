@@ -29,11 +29,15 @@ class Sketch : NSObject {
         canvas.drawShapesWithBorders = false
         x += 1
         
+        
         for i in stride(from: 50, through: 450, by: 25){
         canvas.fillColor = Color.init(hue: i, saturation: 100, brightness: 100, alpha: 100)
         canvas.drawEllipse(centreX: x, centreY: Int(50 * sin(Double(0.02631819699 * Double(x)))) + i, width: 5, height: 5)
         canvas.drawEllipse(centreX: 500 - x, centreY: -Int(50 * sin(Double(0.02631819699 * Double(x)))) + i, width: 5, height: 5)
         }
+            
     }
-    
 }
+    
+
+
