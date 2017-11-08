@@ -15,16 +15,33 @@ import Cocoa
 import PlaygroundSupport
 
 // Create canvas
-let canvas = Canvas(width: 400, height: 300)
+let canvas = Canvas(width: 600, height: 300)
 
-/*:
- ## Add your code below
- 
- Be sure to write human-readable code.
- 
- Use whitespace and comments as appropriate.
- */
-// Replace this comment with your first comment – what is the goal of the code you're about to write?
+// barrel
+canvas.fillColor = Color.init(hue: 1, saturation: 0, brightness: 50, alpha: 100)
+canvas.drawRectangle(bottomLeftX: 225, bottomLeftY: 175, width: 175, height: 25)
+
+// top slide
+canvas.fillColor = Color.black
+canvas.drawRectangle(bottomLeftX: 200, bottomLeftY: 150, width: 200, height: 50)
+
+
+//grip
+canvas.fillColor = Color.init(hue: 1, saturation: 0, brightness: 50, alpha: 100)
+canvas.drawRectangle(bottomLeftX: 200, bottomLeftY: 75, width: 50, height: 75)
+canvas.drawRectangle(bottomLeftX: 200, bottomLeftY: 150, width: 200, height: 20)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
